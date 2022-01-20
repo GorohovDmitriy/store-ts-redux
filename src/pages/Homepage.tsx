@@ -4,11 +4,11 @@ import { CardItem } from "../components/CardItem";
 import { Container, Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { IApple } from "../models/IApple";
+import { IProduct } from "../models/IProduct";
 
 const Homepage: FC = () => {
   const dispatch = useDispatch();
-  const products: IApple[] = useSelector(
+  const products: IProduct[] = useSelector(
     (state: RootState) => state.apple.apple
   );
 
@@ -23,7 +23,7 @@ const Homepage: FC = () => {
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {products &&
-          products.map((product: IApple) => (
+          products.map((product: IProduct) => (
             <Grid item xs={2} sm={4} md={4} key={product.id}>
               <CardItem
                 id={product.id}

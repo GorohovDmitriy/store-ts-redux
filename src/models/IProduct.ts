@@ -1,4 +1,4 @@
-export interface IApple {
+export interface IProduct {
   id: number;
   imageUrl: string;
   name: string

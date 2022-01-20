@@ -24,20 +24,26 @@ const CardItem: FC<CartItemProps> = ({
   price,
 }) => {
   return (
-    <Card sx={{ maxWidth: 345, height: 570 }}>
+    <Card sx={{ maxWidth: 345, height: "100%" }}>
       <CardMedia component="img" image={imageUrl} alt={name} />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h6" component="div">
           {name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">{price} BYN</Button>
-        <Button size="small">Add Cart</Button>
+      <CardActions
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          ml: 1,
+          mr: 1,
+        }}
+      >
+        <Typography>{price} BYN</Typography>
+        <Button variant="contained" sx={{ backgroundColor: "#231f20" }}>
+          Add to Cart
+        </Button>
       </CardActions>
     </Card>
   );
