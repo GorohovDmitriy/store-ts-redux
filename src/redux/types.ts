@@ -1,4 +1,4 @@
-import { IApple } from "../models/IApple";
+import { IProduct } from "../models/IProduct";
 
 export enum AppleEnum {
   GET_APPLE = "GET_APPLE",
@@ -7,18 +7,18 @@ export enum AppleEnum {
 }
 
 export interface AppleState {
-  apple: IApple[];
+  apple: IProduct[];
   isLoading: boolean;
 }
 
 interface GetAppleAction {
   type: AppleEnum.GET_APPLE;
-  payload: IApple[];
+  payload: IProduct[];
 }
 
 interface AddToCartAction {
     type: AppleEnum.ADD_TO_CART
-    payload: IApple
+    payload: IProduct
 }
 
 export type AppleAction = GetAppleAction | AddToCartAction;

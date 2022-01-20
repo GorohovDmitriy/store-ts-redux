@@ -1,8 +1,8 @@
-import { IApple } from './../models/IApple';
-import axios, { AxiosResponse } from 'axios'
+import { IProduct } from "../models/IProduct";
+import axios, { AxiosResponse } from "axios";
 
-export default class AppleService {
-	static async getProduct(): Promise<AxiosResponse<IApple[]>> {
-		return axios.get<IApple[]>(`${process.env.API_URL}`)
-	}
+export default class Store {
+  static async getProduct(): Promise<AxiosResponse<IProduct[]>> {
+    return axios.get<IProduct[]>(`${process.env.API_URL}`);
+  }
 }
