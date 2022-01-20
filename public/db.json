@@ -1,0 +1,67 @@
+{
+  "apple": [
+    {
+      "id": 1,
+      "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/210915083817996265/210927160105090943.jpg@webp",
+      "name": "iPhone 13 Pro, 128 ГБ, Графитовый, (MLW13)",
+      "price": 3799,
+      "category": 0
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/210421075103588110/210421160012445338.jpg@webp",
+      "name": "iPhone 12, 64 ГБ, Фиолетовый, (MJNM3)",
+      "price": 2699,
+      "category": 0
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/201014082220380043/201106080015359090.jpg@webp",
+      "name": "iPhone 12 mini, 64 ГБ, Синий, (MGE13)",
+      "price": 2299,
+      "category": 0
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/201111082127721924/201210170013462562.jpg@webp",
+      "name": "MacBook Pro 13 с Touch Bar Apple M1",
+      "price": 5599,
+      "category": 1
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/211019073857146778/211129170021216691.jpg@webp",
+      "name": "MacBook Pro 16.2 Apple M1 Pro 16GB",
+      "price": 9799,
+      "category": 1
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/211019073859186112/211129170027166620.jpg@webp",
+      "name": "MacBook Pro 16.2 Apple M1 Max 32GB",
+      "price": 12799,
+      "category": 1
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/211019073853864127/211209150011552389.jpg@webp",
+      "name": "Наушники AirPods (3‑го поколения)",
+      "price": 699,
+      "category": 2
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/201209061647639678/201209150028401370.jpg@webp",
+      "name": "Наушники Apple AirPods Max",
+      "price": 1940,
+      "category": 2
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/190320152143021432/190326150013235036.jpg@webp",
+      "name": "Наушники Apple AirPods (2‑го поколения)",
+      "price": 529,
+      "category": 2
+    }
+  ]
+}
