@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 
-interface SVGProps {
+interface SvgProps {
   id: string;
 }
 
-const GlobalSvg: FC<SVGProps> = ({ id }) => {
+const GlobalSvg: FC<SvgProps> = ({ id }) => {
   switch (id) {
     case "logo":
       return (

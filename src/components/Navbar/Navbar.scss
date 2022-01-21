@@ -1,0 +1,43 @@
+.navbar__logo {
+  margin-right: 2rem;
+  display: flex;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+.navbar__list {
+  display: none;
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+
+.navbar__list-logo {
+  display: flex;
+  flex-grow: 1;
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.navbar__list-page {
+  display: none;
+  flex-grow: 1;
+
+  @media (min-width: 900px) {
+    display: flex;
+  }
+}
+
+.navbar__cart {
+  display: flex;
+  flex-grow: 0;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}

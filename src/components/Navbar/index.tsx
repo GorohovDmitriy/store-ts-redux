@@ -12,34 +12,36 @@ import {
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Link } from "react-router-dom";
-import { GlobalSvg } from "../SVG/GlobalSvg";
+import { GlobalSvg } from "../../assets/svg";
+import { useStyles } from "../../utils/useStyles";
+import "./Navbar.scss";
 
 const Navbar: FC = () => {
+  const classes = useStyles();
   const pages: Array<string> = ["Mac", "iPhone", "AirPods"];
 
   return (
-    <AppBar sx={{ backgroundColor: "#231f20" }} position="static">
+    <AppBar color="primary" position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+            className="navbar__logo"
           >
             <Link to="/">
               <GlobalSvg id="logo" />
             </Link>
           </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box className="navbar__list">
             <Typography
               variant="caption"
               component="div"
-              sx={{ display: "flex", alignItems: "center", mr: 0.5 }}
+              className={classes.textAlign}
             >
               <Link to="/">
-                <ArrowBackIcon sx={{ color: "white" }} />
+                <ArrowBackIcon color="secondary" />
               </Link>
             </Typography>
             {pages.map((page) => (
@@ -52,16 +54,13 @@ const Navbar: FC = () => {
             <Typography
               variant="h6"
               component="div"
-              sx={{ display: "flex", alignItems: "center", mr: 0.5 }}
+              className={classes.textAlign}
             >
               1200$
             </Typography>
             <Link to="/cart">
-              <Fab
-                size="small"
-                sx={{ backgroundColor: "black", mr: 1, mt: 0.5 }}
-              >
-                <AddShoppingCartIcon sx={{ color: "white" }} />
+              <Fab size="small" color="primary">
+                <AddShoppingCartIcon />
               </Fab>
             </Link>
           </Box>
@@ -69,32 +68,29 @@ const Navbar: FC = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            className="navbar__list-logo"
           >
             <GlobalSvg id="logo" />
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box className="navbar__list-page">
             {pages.map((page) => (
-              <MenuItem
-                key={page}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
+              <MenuItem key={page} className={classes.menuItem}>
                 {page}
               </MenuItem>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex", mr: 1 } }}>
+          <Box className="navbar__cart">
             <Typography
               variant="h6"
               component="div"
-              sx={{ display: "flex", alignItems: "center", mr: 1 }}
+              className={classes.textAlign}
             >
               1200$
             </Typography>
             <Tooltip title="Open settings">
               <Link to="/cart">
-                <Fab size="small" sx={{ backgroundColor: "black" }}>
-                  <AddShoppingCartIcon sx={{ color: "white" }} />
+                <Fab size="small" color="primary">
+                  <AddShoppingCartIcon color="secondary" />
                 </Fab>
               </Link>
             </Tooltip>
@@ -105,4 +101,4 @@ const Navbar: FC = () => {
   );
 };
 
-export { Navbar };
+export default Navbar;
