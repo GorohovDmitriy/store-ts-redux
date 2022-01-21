@@ -1,10 +1,9 @@
-
-import { ProductAction, ProductEnum, ProductState } from "../types";
+import { ProductAction, ProductActions, ProductState } from "../types";
 
 const initialState: ProductState = {
   apple: [],
   isLoading: false,
-  error: ''
+  error: "",
 };
 
 export default function productReducer(
@@ -12,22 +11,22 @@ export default function productReducer(
   action: ProductAction
 ): ProductState {
   switch (action.type) {
-    case ProductEnum.GET_APPLE:
+    case ProductActions.GET_PRODUCT:
       return {
         apple: action.payload,
         isLoading: false,
-        error: ''
+        error: "",
       };
-    case ProductEnum.SET_LOADING:
+    case ProductActions.SET_LOADING:
       return {
-          ...state,
-          isLoading: action.payload
-      }
-    case ProductEnum.SET_ERROR:
-        return {
-            ...state,
-            error: action.payload
-        }
+        ...state,
+        isLoading: action.payload,
+      };
+    case ProductActions.SET_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+      };
     default:
       return state;
   }

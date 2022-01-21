@@ -1,16 +1,18 @@
-import * as React from "react";
+import React from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { Container } from "@mui/material";
+import { useStyles } from "../../utils/useStyles";
 
-export default function CircularIndeterminate() {
+const Loading = () => {
+  const classes = useStyles();
   return (
     <Container>
-      <Box
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center", mt: 15 }}
-      >
+      <Box className={classes.loading}>
         <CircularProgress size={150} />
       </Box>
     </Container>
   );
-}
+};
+
+export default Loading;

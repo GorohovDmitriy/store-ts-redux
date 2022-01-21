@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Navbar } from "./components/Navbar";
-import { Homepage } from "./pages/Homepage";
-import { Cartpage } from "./pages/Cartpage";
+import { HomePage } from "./pages/HomePage";
+import { CartPage } from "./pages/CartPage";
 import { Routes, Route } from "react-router-dom";
 
 const App: FC = () => {
@@ -9,9 +9,9 @@ const App: FC = () => {
     <React.Fragment>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/cart" element={<Cartpage />} />
-        <Route path="/cart:id" element={<Homepage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/cart:id" element={<HomePage />} />
       </Routes>
     </React.Fragment>
   );

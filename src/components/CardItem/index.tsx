@@ -7,6 +7,7 @@ import {
   Button,
   Typography,
 } from "@mui/material";
+import { useStyles } from "../../utils/useStyles";
 
 interface CartItemProps {
   id: number;
@@ -23,23 +24,16 @@ const CardItem: FC<CartItemProps> = ({
   imageUrl,
   price,
 }) => {
+  const classes = useStyles();
   return (
-    <Card sx={{ maxWidth: 345, height: "100%" }}>
+    <Card className={classes.cartContainer}>
       <CardMedia component="img" image={imageUrl} alt={name} />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
           {name}
         </Typography>
       </CardContent>
-      <CardActions
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          ml: 1,
-          mr: 1,
-        }}
-      >
+      <CardActions className={classes.cartAction}>
         <Typography>{price} BYN</Typography>
         <Button variant="contained" sx={{ backgroundColor: "#231f20" }}>
           Add to Cart

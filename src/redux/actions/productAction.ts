@@ -2,7 +2,7 @@ import { ThunkAction } from "redux-thunk";
 import Store from "../../Api/Store";
 import { IProduct } from "../../models/IProduct";
 import { RootState } from "../store";
-import { ProductAction, ProductEnum } from "../types";
+import { ProductAction, ProductActions } from "../types";
 
 export const fetchProduct = (): ThunkAction<
   void,
@@ -23,21 +23,21 @@ export const fetchProduct = (): ThunkAction<
 
 export const setProduct = (items: IProduct[]): ProductAction => {
   return {
-    type: ProductEnum.GET_APPLE,
+    type: ProductActions.GET_PRODUCT,
     payload: items,
   };
 };
 
 export const setLoading = (payload: boolean): ProductAction => {
   return {
-    type: ProductEnum.SET_LOADING,
+    type: ProductActions.SET_LOADING,
     payload,
   };
 };
 
 export const setError = (message: string): ProductAction => {
   return {
-    type: ProductEnum.SET_ERROR,
+    type: ProductActions.SET_ERROR,
     payload: message,
   };
 };

@@ -1,7 +1,7 @@
 import { IProduct } from "../models/IProduct";
 
-export enum ProductEnum {
-  GET_APPLE = "GET_APPLE",
+export enum ProductActions {
+  GET_PRODUCT = "GET_PRODUCT",
   SET_LOADING = "SET_LOADING",
   ADD_TO_CART = "ADD_TO_CART",
   SET_ERROR = 'SET_ERROR'
@@ -14,22 +14,22 @@ export interface ProductState {
 }
 
 interface GetProductAction {
-  type: ProductEnum.GET_APPLE;
+  type: ProductActions.GET_PRODUCT;
   payload: IProduct[];
 }
 
 interface AddToCartAction {
-  type: ProductEnum.ADD_TO_CART;
+  type: ProductActions.ADD_TO_CART;
   payload: IProduct;
 }
 
 interface SetLoadingAction {
-  type: typeof ProductEnum.SET_LOADING;
+  type: typeof ProductActions.SET_LOADING;
   payload: boolean
 }
 
 interface SetErrorAction {
-    type: typeof ProductEnum.SET_ERROR
+    type: typeof ProductActions.SET_ERROR
     payload: string
 }
 

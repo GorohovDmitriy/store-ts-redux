@@ -1,20 +1,20 @@
 import React, { FC, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 
-import { CardItem } from "../components/CardItem";
-import { Sorting } from "../components/Sorting";
-import Loading from "../components/Loading";
+import { CardItem } from "../../components/CardItem";
+import { Sorting } from "../../components/Sorting";
+import Loading from "../../components/Loading";
 
 import {
   fetchProduct,
   setLoading,
   setProduct,
-} from "../redux/actions/productsAction";
+} from "../../redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { IProduct } from "../models/IProduct";
+import { RootState } from "../../redux/store";
+import { IProduct } from "../../models/IProduct";
 
-const Homepage: FC = () => {
+const HomePage: FC = React.memo(() => {
   const dispatch = useDispatch();
   const products: IProduct[] = useSelector(
     (state: RootState) => state.products.apple
@@ -34,10 +34,9 @@ const Homepage: FC = () => {
     dispatch(fetchProduct());
   }, [dispatch]);
 
-
   return (
     <Container sx={{ marginTop: 2 }} fixed>
-      <Sorting sortPrice={() => sortPrice()} />
+      <Sorting sortPrice={sortPrice} />
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
@@ -61,6 +60,6 @@ const Homepage: FC = () => {
       </Grid>
     </Container>
   );
-};
+});
 
-export { Homepage };
+export { HomePage };

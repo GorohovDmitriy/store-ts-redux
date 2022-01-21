@@ -12,9 +12,12 @@ import {
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Link } from "react-router-dom";
-import { GlobalSvg } from "../SVG/GlobalSvg";
+import { GlobalSvg } from "../../assets/svg";
+import { useStyles } from "../../utils/useStyles";
+import './Navbar.scss'
 
 const Navbar: FC = () => {
+  const classes = useStyles();
   const pages: Array<string> = ["Mac", "iPhone", "AirPods"];
 
   return (
@@ -35,7 +38,7 @@ const Navbar: FC = () => {
             <Typography
               variant="caption"
               component="div"
-              sx={{ display: "flex", alignItems: "center", mr: 0.5 }}
+              className={classes.textAlign}
             >
               <Link to="/">
                 <ArrowBackIcon sx={{ color: "white" }} />
@@ -51,15 +54,12 @@ const Navbar: FC = () => {
             <Typography
               variant="h6"
               component="div"
-              sx={{ display: "flex", alignItems: "center", mr: 0.5 }}
+              className={classes.textAlign}
             >
               1200$
             </Typography>
             <Link to="/cart">
-              <Fab
-                size="small"
-                sx={{ backgroundColor: "black", mr: 1, mt: 0.5 }}
-              >
+              <Fab size="small" sx={{ backgroundColor: "black" }}>
                 <AddShoppingCartIcon sx={{ color: "white" }} />
               </Fab>
             </Link>
@@ -86,7 +86,7 @@ const Navbar: FC = () => {
             <Typography
               variant="h6"
               component="div"
-              sx={{ display: "flex", alignItems: "center", mr: 1 }}
+              className={classes.textAlign}
             >
               1200$
             </Typography>
