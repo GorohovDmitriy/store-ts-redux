@@ -1,8 +1,9 @@
 import React, { FC, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
+import { useStyles } from "../../utils/useStyles";
 
-import { CardItem } from "../../components/CardItem";
-import { Sorting } from "../../components/Sorting";
+import CardItem from "../../components/CardItem";
+import Sorting from "../../components/Sorting";
 import Loading from "../../components/Loading";
 
 import {
@@ -15,6 +16,7 @@ import { RootState } from "../../redux/store";
 import { IProduct } from "../../models/IProduct";
 
 const HomePage: FC = React.memo(() => {
+  const classes = useStyles();
   const dispatch = useDispatch();
   const products: IProduct[] = useSelector(
     (state: RootState) => state.products.apple
@@ -35,7 +37,7 @@ const HomePage: FC = React.memo(() => {
   }, [dispatch]);
 
   return (
-    <Container sx={{ marginTop: 2 }} fixed>
+    <Container className={classes.homeContainer} fixed>
       <Sorting sortPrice={sortPrice} />
       <Grid
         container
@@ -62,4 +64,6 @@ const HomePage: FC = React.memo(() => {
   );
 });
 
-export { HomePage };
+HomePage.displayName = "HomePage";
+
+export default HomePage;

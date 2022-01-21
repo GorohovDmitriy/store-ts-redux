@@ -9,4 +9,4 @@ const CartPage: FC = () => {
   );
 };
 
-export { CartPage };
+export default CartPage;

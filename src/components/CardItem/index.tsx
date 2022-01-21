@@ -35,7 +35,7 @@ const CardItem: FC<CartItemProps> = ({
       </CardContent>
       <CardActions className={classes.cartAction}>
         <Typography>{price} BYN</Typography>
-        <Button variant="contained" sx={{ backgroundColor: "#231f20" }}>
+        <Button variant="contained" color="primary">
           Add to Cart
         </Button>
       </CardActions>
@@ -43,4 +43,4 @@ const CardItem: FC<CartItemProps> = ({
   );
 };
 
-export { CardItem };
+export default CardItem;

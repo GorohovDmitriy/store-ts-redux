@@ -13,8 +13,8 @@ const Sorting: FC<SortingProps> = ({ sortPrice }) => {
   return (
     <Box className={classes.sortBox}>
       <ButtonGroup className={classes.sortGroup}>
-        <IconButton onClick={sortPrice} sx={{ mr: 2 }}>
-          <SortIcon />
+        <IconButton onClick={sortPrice}>
+          <SortIcon  />
         </IconButton>
         Сортировка по цене
       </ButtonGroup>
@@ -22,4 +22,4 @@ const Sorting: FC<SortingProps> = ({ sortPrice }) => {
   );
 };
 
-export { Sorting };
+export default Sorting;
