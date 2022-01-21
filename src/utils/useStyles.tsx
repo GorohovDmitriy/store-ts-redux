@@ -7,6 +7,9 @@ export const useStyles = makeStyles((theme?: any) => ({
     justifyContent: "center",
     marginTop: "15rem",
   },
+  slider: {
+    marginBottom: '2rem'
+  },
   backColor: { backgroundColor: "black" },
   textAlign: { display: "flex", alignItems: "center", paddingRight: "0.5rem" },
   cartIcon: {
