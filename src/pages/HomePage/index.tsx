@@ -5,6 +5,7 @@ import { useStyles } from "../../utils/useStyles";
 import CardItem from "../../components/CardItem";
 import Sorting from "../../components/Sorting";
 import Loading from "../../components/Loading";
+import ImgSlider from "../../components/ImgSlider";
 
 import {
   fetchProduct,
@@ -38,6 +39,7 @@ const HomePage: FC = React.memo(() => {
 
   return (
     <Container className={classes.homeContainer} fixed>
+        <ImgSlider />
       <Sorting sortPrice={sortPrice} />
       <Grid
         container
