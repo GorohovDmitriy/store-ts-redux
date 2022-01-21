@@ -31,7 +31,6 @@ const Navbar: FC = () => {
               <GlobalSvg id="logo" />
             </Link>
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <Typography
               variant="caption"

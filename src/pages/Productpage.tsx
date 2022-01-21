@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-const SelectedItem: FC = () => {
+const Productpage: FC = () => {
   return <div>SELECTED ITEM</div>;
 };
 
-export { SelectedItem };
+export { Productpage };

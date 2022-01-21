@@ -1,24 +1,40 @@
 import { IProduct } from "../models/IProduct";
 
-export enum AppleEnum {
+export enum ProductEnum {
   GET_APPLE = "GET_APPLE",
   SET_LOADING = "SET_LOADING",
-  ADD_TO_CART = 'ADD_TO_CART',
+  ADD_TO_CART = "ADD_TO_CART",
+  SET_ERROR = 'SET_ERROR'
 }
 
-export interface AppleState {
+export interface ProductState {
   apple: IProduct[];
   isLoading: boolean;
+  error: string
 }
 
-interface GetAppleAction {
-  type: AppleEnum.GET_APPLE;
+interface GetProductAction {
+  type: ProductEnum.GET_APPLE;
   payload: IProduct[];
 }
 
 interface AddToCartAction {
-    type: AppleEnum.ADD_TO_CART
-    payload: IProduct
+  type: ProductEnum.ADD_TO_CART;
+  payload: IProduct;
 }
 
-export type AppleAction = GetAppleAction | AddToCartAction;
+interface SetLoadingAction {
+  type: typeof ProductEnum.SET_LOADING;
+  payload: boolean
+}
+
+interface SetErrorAction {
+    type: typeof ProductEnum.SET_ERROR
+    payload: string
+}
+
+export type ProductAction =
+  | GetProductAction
+  | AddToCartAction
+  | SetLoadingAction
+  | SetErrorAction;

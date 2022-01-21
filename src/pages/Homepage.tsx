@@ -1,7 +1,15 @@
 import React, { FC, useEffect } from "react";
-import { getApple } from "../redux/actions/appleAction";
-import { CardItem } from "../components/CardItem";
 import { Container, Grid } from "@mui/material";
+
+import { CardItem } from "../components/CardItem";
+import { Sorting } from "../components/Sorting";
+import Loading from "../components/Loading";
+
+import {
+  fetchProduct,
+  setLoading,
+  setProduct,
+} from "../redux/actions/productsAction";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { IProduct } from "../models/IProduct";
@@ -9,20 +17,35 @@ import { IProduct } from "../models/IProduct";
 const Homepage: FC = () => {
   const dispatch = useDispatch();
   const products: IProduct[] = useSelector(
-    (state: RootState) => state.apple.apple
+    (state: RootState) => state.products.apple
   );
+  const isLoading = useSelector((state: RootState) => state.products.isLoading);
+
+  const sortPrice = () => {
+    dispatch(setLoading(true));
+    const sortProduct = products.sort(
+      (a, b) => Number(b.price) - Number(a.price)
+    );
+    dispatch(setProduct(sortProduct));
+    dispatch(setLoading(false));
+  };
 
   useEffect(() => {
-    dispatch(getApple());
+    dispatch(fetchProduct());
   }, [dispatch]);
+
+
   return (
     <Container sx={{ marginTop: 2 }} fixed>
+      <Sorting sortPrice={() => sortPrice()} />
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
-        {products &&
+        {isLoading ? (
+          <Loading />
+        ) : (
           products.map((product: IProduct) => (
             <Grid item xs={2} sm={4} md={4} key={product.id}>
               <CardItem
@@ -33,7 +56,8 @@ const Homepage: FC = () => {
                 price={product.price}
               />
             </Grid>
-          ))}
+          ))
+        )}
       </Grid>
     </Container>
   );
