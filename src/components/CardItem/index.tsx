@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import ButtonCart from "../ButtonCart";
+import { useNavigate } from "react-router-dom";
 import { useStyles } from "../../utils/useStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -15,6 +16,7 @@ import {
   removeFromCart,
 } from "../../redux/actions/cartAction";
 import { IProduct } from "../../models/IProduct";
+import { setCurrentProduct } from "../../redux/actions/productAction";
 
 interface CartItemProps {
   product: IProduct;
@@ -22,6 +24,7 @@ interface CartItemProps {
 
 const CardItem: FC<CartItemProps> = React.memo(({ product }) => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.cart.productInCart);
 
@@ -35,9 +38,19 @@ const CardItem: FC<CartItemProps> = React.memo(({ product }) => {
     );
   };
 
+  const selectProduct = () => {
+    dispatch(setCurrentProduct(product));
+    navigate(`/app/${product.id}`);
+  };
+
   return (
     <Card className={classes.cartContainer}>
-      <CardMedia component="img" image={product.imageUrl} alt={product.name} />
+      <CardMedia
+        onClick={selectProduct}
+        component="img"
+        image={product.imageUrl}
+        alt={product.name}
+      />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
           {product.name}
