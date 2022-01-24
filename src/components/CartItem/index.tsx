@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import { IProduct } from "../../models/IProduct";
 import { ButtonBase, Grid, Paper, Typography, CardMedia } from "@mui/material";
 import { removeFromCart } from "../../redux/actions/cartAction";
@@ -12,9 +12,9 @@ interface CartItemProps {
 const CartItem: FC<CartItemProps> = ({ product }) => {
   const dispatch = useDispatch();
 
-  const removeProduct = () => {
+  const removeProduct = useCallback(() => {
     dispatch(removeFromCart(product.id));
-  };
+  }, [dispatch, product.id]);
 
   return (
     <Paper className="cart__item">

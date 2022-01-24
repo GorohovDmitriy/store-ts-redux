@@ -8,12 +8,12 @@ import CartItem from "../../components/CartItem";
 import Empty from "../../components/Empty";
 
 const CartPage: FC = React.memo(() => {
-  const product: IProduct[] = useSelector(
+  const products: IProduct[] = useSelector(
     (state: RootState) => state.cart.productInCart
   );
-  const totalPrice = calcTotalPrice(product);
+  const totalPrice = calcTotalPrice(products);
 
-  if (product.length < 1) {
+  if (products.length < 1) {
     return <Empty />;
   }
 
@@ -21,12 +21,12 @@ const CartPage: FC = React.memo(() => {
     <Container fixed>
       <Box className="cart__page">
         <Typography variant="overline" display="block" gutterBottom>
-          amount in cart {totalPrice} BYN {product.length} products
+          amount in cart {totalPrice} BYN {products.length} products
         </Typography>
         <Button variant="contained">to Order</Button>
       </Box>
-      {product &&
-        product.map((item: IProduct) => (
+      {products &&
+        products.map((item: IProduct) => (
           <CartItem key={item.id} product={item} />
         ))}
     </Container>
