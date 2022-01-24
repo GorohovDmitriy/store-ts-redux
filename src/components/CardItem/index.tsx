@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import {
   Card,
   CardActions,
@@ -38,10 +38,10 @@ const CardItem: FC<CartItemProps> = React.memo(({ product }) => {
     );
   };
 
-  const selectProduct = () => {
+  const selectProduct = useCallback(() => {
     dispatch(setCurrentProduct(product));
     navigate(`/app/${product.id}`);
-  };
+  }, [dispatch, product, navigate]);
 
   return (
     <Card className={classes.cartContainer}>

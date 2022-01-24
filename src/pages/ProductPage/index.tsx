@@ -29,9 +29,7 @@ const ProductPage = React.memo(() => {
   );
 
   const handleClick = () => {
-    if (!productCurrent) {
-      return null;
-    } else {
+    if (productCurrent) {
       dispatch(
         isProductInCart
           ? removeFromCart(productCurrent.id)
@@ -45,7 +43,7 @@ const ProductPage = React.memo(() => {
       {productCurrent && (
         <Grid container spacing={2}>
           <Grid item>
-            <ButtonBase className='product-page' >
+            <ButtonBase className="product-page">
               <CardMedia
                 component="img"
                 alt="green iguana"
