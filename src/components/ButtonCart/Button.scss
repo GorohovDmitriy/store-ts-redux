@@ -1,0 +1,18 @@
+.btn {
+  border-radius: 7px;
+  color: white;
+  border: none;
+  padding: 10px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.btn-secondary {
+  background-color: #231f20;
+}
+.btn-primary {
+  background-color: rgb(85, 88, 237);
+}

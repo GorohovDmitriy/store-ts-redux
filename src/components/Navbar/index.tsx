@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import {
   AppBar,
+  Badge,
   Box,
   Container,
   Fab,
@@ -12,13 +13,18 @@ import {
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 import { GlobalSvg } from "../../assets/svg";
 import { useStyles } from "../../utils/useStyles";
+import { calcTotalPrice } from "../../utils/calcTotalPrice";
 import "./Navbar.scss";
 
-const Navbar: FC = () => {
+const Navbar: FC = React.memo(() => {
   const classes = useStyles();
   const pages: Array<string> = ["Mac", "iPhone", "AirPods"];
+  const product = useSelector((state: RootState) => state.cart.productInCart);
+  const totalPrice = calcTotalPrice(product);
 
   return (
     <AppBar color="primary" position="static">
@@ -51,16 +57,21 @@ const Navbar: FC = () => {
                 </Typography>
               </MenuItem>
             ))}
-            <Typography
-              variant="h6"
-              component="div"
-              className={classes.textAlign}
-            >
-              1200$
-            </Typography>
+            {totalPrice > 0 ? (
+              <Typography
+                variant="caption"
+                component="div"
+                className={classes.textAlign}
+              >
+                {totalPrice} BYN
+              </Typography>
+            ) : null}
+
             <Link to="/cart">
               <Fab size="small" color="primary">
-                <AddShoppingCartIcon />
+                <Badge color="error" badgeContent={product.length}>
+                  <AddShoppingCartIcon />
+                </Badge>
               </Fab>
             </Link>
           </Box>
@@ -80,17 +91,21 @@ const Navbar: FC = () => {
             ))}
           </Box>
           <Box className="navbar__cart">
-            <Typography
-              variant="h6"
-              component="div"
-              className={classes.textAlign}
-            >
-              1200$
-            </Typography>
+            {totalPrice > 0 ? (
+              <Typography
+                variant="caption"
+                component="div"
+                className={classes.textAlign}
+              >
+                {totalPrice} BYN
+              </Typography>
+            ) : null}
             <Tooltip title="Open settings">
               <Link to="/cart">
                 <Fab size="small" color="primary">
-                  <AddShoppingCartIcon color="secondary" />
+                  <Badge color="error" badgeContent={product.length}>
+                    <AddShoppingCartIcon />
+                  </Badge>
                 </Fab>
               </Link>
             </Tooltip>
@@ -99,6 +114,8 @@ const Navbar: FC = () => {
       </Container>
     </AppBar>
   );
-};
+});
+
+Navbar.displayName = "Navbar";
 
 export default Navbar;

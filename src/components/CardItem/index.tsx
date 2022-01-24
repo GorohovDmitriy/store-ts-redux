@@ -4,43 +4,58 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Button,
   Typography,
 } from "@mui/material";
+import ButtonCart from "../ButtonCart";
 import { useStyles } from "../../utils/useStyles";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import {
+  setProductInCart,
+  removeFromCart,
+} from "../../redux/actions/cartAction";
+import { IProduct } from "../../models/IProduct";
 
 interface CartItemProps {
-  id: number;
-  category: number;
-  name: string;
-  imageUrl: string;
-  price: number;
+  product: IProduct;
 }
 
-const CardItem: FC<CartItemProps> = ({
-  id,
-  category,
-  name,
-  imageUrl,
-  price,
-}) => {
+const CardItem: FC<CartItemProps> = React.memo(({ product }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const products = useSelector((state: RootState) => state.cart.productInCart);
+
+  const isProductInCart = products.some(
+    (item: IProduct) => item.id === product.id
+  );
+
+  const handleClick = () => {
+    dispatch(
+      isProductInCart ? removeFromCart(product.id) : setProductInCart(product)
+    );
+  };
+
   return (
     <Card className={classes.cartContainer}>
-      <CardMedia component="img" image={imageUrl} alt={name} />
+      <CardMedia component="img" image={product.imageUrl} alt={product.name} />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
-          {name}
+          {product.name}
         </Typography>
       </CardContent>
       <CardActions className={classes.cartAction}>
-        <Typography>{price} BYN</Typography>
-        <Button variant="contained" color="primary">
-          Add to Cart
-        </Button>
+        <Typography>{product.price} BYN</Typography>
+        <ButtonCart
+          handleClick={handleClick}
+          type={isProductInCart ? "secondary" : "primary"}
+        >
+          {isProductInCart ? "Remove from cart" : "Add to cart"}
+        </ButtonCart>
       </CardActions>
     </Card>
   );
-};
+});
+
+CardItem.displayName = "CardItem";
 
 export default CardItem;
