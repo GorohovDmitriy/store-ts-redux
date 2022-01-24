@@ -28,14 +28,11 @@ const CardItem: FC<CartItemProps> = React.memo(({ product }) => {
   const isProductInCart = products.some(
     (item: IProduct) => item.id === product.id
   );
-  console.log(isProductInCart);
 
   const handleClick = () => {
-    if (isProductInCart) {
-      dispatch(removeFromCart(product.id));
-    } else {
-      dispatch(setProductInCart(product));
-    }
+    dispatch(
+      isProductInCart ? removeFromCart(product.id) : setProductInCart(product)
+    );
   };
 
   return (
