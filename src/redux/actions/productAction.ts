@@ -1,7 +1,7 @@
 import { ThunkAction } from "redux-thunk";
 import Store from "../../Api/Store";
 import { IProduct } from "../../models/IProduct";
-import { RootState } from "../store";
+import { AppDispatch, RootState } from "../store";
 import { ProductAction, ProductActions } from "../types";
 
 export const fetchProduct = (): ThunkAction<
@@ -10,7 +10,7 @@ export const fetchProduct = (): ThunkAction<
   null,
   ProductAction
 > => {
-  return async (dispatch) => {
+  return async (dispatch: AppDispatch) => {
     try {
       dispatch(setLoading(true));
       const response = await Store.getProduct();

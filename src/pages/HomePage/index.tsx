@@ -39,7 +39,7 @@ const HomePage: FC = React.memo(() => {
 
   return (
     <Container className={classes.homeContainer} fixed>
-        <ImgSlider />
+      <ImgSlider />
       <Sorting sortPrice={sortPrice} />
       <Grid
         container
@@ -51,13 +51,7 @@ const HomePage: FC = React.memo(() => {
         ) : (
           products.map((product: IProduct) => (
             <Grid item xs={2} sm={4} md={4} key={product.id}>
-              <CardItem
-                id={product.id}
-                category={product.category}
-                imageUrl={product.imageUrl}
-                name={product.name}
-                price={product.price}
-              />
+              <CardItem product={product} />
             </Grid>
           ))
         )}
