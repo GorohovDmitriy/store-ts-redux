@@ -1,4 +1,4 @@
-import { IProduct } from "../models/IProduct";
+import { IProduct } from "./../models/IProduct";
 
 export enum ProductActions {
   GET_PRODUCT = "GET_PRODUCT",
@@ -6,16 +6,18 @@ export enum ProductActions {
   ADD_TO_CART = "ADD_TO_CART",
   REMOVE_FROM_CART = "REMOVE_FROM_CART",
   SET_ERROR = "SET_ERROR",
+  SET_CURRENT_PRODUTC = "SET_CURRENT_PRODUTC",
 }
 
 export interface ProductState {
   apple: IProduct[];
   isLoading: boolean;
   error: string;
+  currentProduct: IProduct | null;
 }
 
 export interface CartState {
-    productInCart: IProduct[]
+  productInCart: IProduct[];
 }
 
 interface GetProductAction {
@@ -43,9 +45,15 @@ interface SetErrorAction {
   payload: string;
 }
 
+interface SetCurrentProduct {
+  type: typeof ProductActions.SET_CURRENT_PRODUTC;
+  payload: IProduct;
+}
+
 export type ProductAction =
   | GetProductAction
   | AddToCartAction
   | SetLoadingAction
   | SetErrorAction
-  | RemoveFromCart;
+  | RemoveFromCart
+  | SetCurrentProduct;

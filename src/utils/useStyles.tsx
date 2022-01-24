@@ -27,7 +27,7 @@ export const useStyles = makeStyles((theme?: any) => ({
     justifyContent: "center",
     gap: "1rem",
   },
-  cartContainer: { maxWidth: 345, height: "100%" },
+  cartContainer: { maxWidth: 345, height: "100%", cursor: 'pointer' },
   cartAction: {
     display: "flex",
     alignItems: "center",

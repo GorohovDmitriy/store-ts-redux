@@ -5,63 +5,71 @@
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/210915083817996265/210927160105090943.jpg@webp",
       "name": "iPhone 13 Pro, 128 ГБ, Графитовый, (MLW13)",
       "price": 3799,
-      "category": "iPhone"
+      "category": "iPhone",
+      "description": "Дисплей Super Retina XDR с технологией ProMotion и быстрым, плавным откликом. Грандиозный апгрейд системы камер, открывающий совершенно новые возможности. Исключительная прочность.A15 Bionic — самый быстрый чип для iPhone. И впечатляющее время работы без подзарядки. Всё это Pro."
     },
     {
       "id": 2,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/210421075103588110/210421160012445338.jpg@webp",
       "name": "iPhone 12, 64 ГБ, Фиолетовый, (MJNM3)",
       "price": 2699,
-      "category": "iPhone"
+      "category": "iPhone",
+      "description": "Дисплей Super Retina XDR с технологией ProMotion и быстрым, плавным откликом. Грандиозный апгрейд системы камер, открывающий совершенно новые возможности. Исключительная прочность.A15 Bionic — самый быстрый чип для iPhone. И впечатляющее время работы без подзарядки. Всё это Pro."
     },
     {
       "id": 3,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/201014082220380043/201106080015359090.jpg@webp",
       "name": "iPhone 12 mini, 64 ГБ, Синий, (MGE13)",
       "price": 2299,
-      "category": "iPhone"
+      "category": "iPhone",
+      "description": "Дисплей Super Retina XDR с технологией ProMotion и быстрым, плавным откликом. Грандиозный апгрейд системы камер, открывающий совершенно новые возможности. Исключительная прочность.A15 Bionic — самый быстрый чип для iPhone. И впечатляющее время работы без подзарядки. Всё это Pro."
     },
     {
       "id": 4,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/211025063145607375/211129170027166620.jpg@webp",
       "name": "MacBook Pro 16.2 Apple M1 Pro 32GB",
       "price": 10999,
-      "category": "MacBook"
+      "category": "MacBook",
+      "description": "С появлением чипа Apple M1 MacBook Pro 13 дюймов становится невероятно производительным и быстрым. Мощность центрального процессора выросла до 2,8 раза. Скорость обработки графики — до 5 раз. А благодаря передовой системе Neural Engine от Apple скорость машинного обучения возросла до 11 раз. При этом MacBook Pro работает без подзарядки до 20 часов — дольше, чем любой другой Mac. Самый популярный ноутбук Apple класса Pro выходит на совершенно новый уровень."
     },
     {
       "id": 5,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/211019073857146778/211129170021216691.jpg@webp",
       "name": "MacBook Pro 16.2 Apple M1 Pro 16GB",
       "price": 9799,
-      "category": "MacBook"
+      "category": "MacBook",
+      "description": "С появлением чипа Apple M1 MacBook Pro 13 дюймов становится невероятно производительным и быстрым. Мощность центрального процессора выросла до 2,8 раза. Скорость обработки графики — до 5 раз. А благодаря передовой системе Neural Engine от Apple скорость машинного обучения возросла до 11 раз. При этом MacBook Pro работает без подзарядки до 20 часов — дольше, чем любой другой Mac. Самый популярный ноутбук Apple класса Pro выходит на совершенно новый уровень."
     },
     {
       "id": 6,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/211019073859186112/211129170027166620.jpg@webp",
       "name": "MacBook Pro 16.2 Apple M1 Max 32GB",
       "price": 12799,
-      "category": "MacBook"
+      "category": "MacBook",
+      "description": "С появлением чипа Apple M1 MacBook Pro 13 дюймов становится невероятно производительным и быстрым. Мощность центрального процессора выросла до 2,8 раза. Скорость обработки графики — до 5 раз. А благодаря передовой системе Neural Engine от Apple скорость машинного обучения возросла до 11 раз. При этом MacBook Pro работает без подзарядки до 20 часов — дольше, чем любой другой Mac. Самый популярный ноутбук Apple класса Pro выходит на совершенно новый уровень."
     },
     {
       "id": 7,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/211019073853864127/211209150011552389.jpg@webp",
       "name": "Наушники AirPods (3‑го поколения)",
       "price": 699,
-      "category": "AirPods"
+      "category": "AirPods",
+      "description": "Представляем абсолютно новые AirPods. Технология прослушивания аудио окружает звук со всеми сторонами. Адаптивный эквалайзер подстраивает музыку индивидуально под вас. Аккумулятор работает ещё дольше без подзарядки. Наушники не боятся пота и воды. Ощущения просто волшебные."
     },
     {
       "id": 8,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/201209061647639678/201209150028401370.jpg@webp",
       "name": "Наушники Apple AirPods Max, «Серый космос»",
       "price": 1940,
-      "category": "AirPods"
+      "category": "AirPods","description": "Представляем абсолютно новые AirPods. Технология прослушивания аудио окружает звук со всеми сторонами. Адаптивный эквалайзер подстраивает музыку индивидуально под вас. Аккумулятор работает ещё дольше без подзарядки. Наушники не боятся пота и воды. Ощущения просто волшебные."
     },
     {
       "id": 9,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/190320152143021432/190326150013235036.jpg@webp",
       "name": "Наушники Apple AirPods (2‑го поколения)",
       "price": 529,
-      "category": "AirPods"
+      "category": "AirPods",
+      "description": "Представляем абсолютно новые AirPods. Технология прослушивания аудио окружает звук со всеми сторонами. Адаптивный эквалайзер подстраивает музыку индивидуально под вас. Аккумулятор работает ещё дольше без подзарядки. Наушники не боятся пота и воды. Ощущения просто волшебные."
     }
   ]
 }

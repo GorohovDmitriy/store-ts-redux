@@ -41,3 +41,10 @@ export const setError = (message: string): ProductAction => {
     payload: message,
   };
 };
+
+export const setCurrentProduct = (payload: IProduct): ProductAction => {
+  return {
+    type: ProductActions.SET_CURRENT_PRODUTC,
+    payload,
+  };
+};

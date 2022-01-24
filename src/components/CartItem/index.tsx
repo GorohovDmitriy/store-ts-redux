@@ -37,6 +37,9 @@ const CartItem: FC<CartItemProps> = ({ product }) => {
               <Typography variant="body2" color="text.secondary">
                 {product.category}
               </Typography>
+              <Typography gutterBottom variant="caption" color='tesxtSecondary' component="div">
+                {product.description}
+              </Typography>
             </Grid>
             <Grid item>
               <Typography
