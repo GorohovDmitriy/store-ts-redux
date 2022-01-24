@@ -1,0 +1,23 @@
+.cart__item {
+  padding: 2rem;
+  margin: auto;
+  flex-grow: 1;
+  max-width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.cart__button-base {
+  width: 150px;
+  height: 150px;
+}
+
+.cart__remove {
+  cursor: pointer;
+  
+  &:hover {
+      color: red;
+  }
+}
+.cart__page {
+    margin-top: 20px;
+}
