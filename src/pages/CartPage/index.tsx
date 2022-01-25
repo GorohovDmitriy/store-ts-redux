@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IProduct } from "../../models/IProduct";
 import { calcTotalPrice } from "../../utils/calcTotalPrice";
+import delcOfNumber from "../../utils/delcOfNumber";
 import CartItem from "../../components/CartItem";
 import Empty from "../../components/Empty";
 import ModalWindow from "../../components/ModalWindow";
@@ -25,13 +26,18 @@ const CartPage: FC = React.memo(() => {
     <Container fixed>
       <Box className="cart__page">
         <Typography variant="overline" display="block" gutterBottom>
-          {products.length > 1 ? "товаров" : "товар"} {products.length} на сумму
+          {delcOfNumber(products.length)} {products.length} на сумму
           {totalPrice} BYN
         </Typography>
         <Button onClick={handleOpen} variant="contained">
           Оформить заказ
         </Button>
-        <ModalWindow totalPrice={totalPrice} products={products} open={open} handleClose={handleClose} />
+        <ModalWindow
+          totalPrice={totalPrice}
+          products={products}
+          open={open}
+          handleClose={handleClose}
+        />
       </Box>
       {products &&
         products.map((item: IProduct) => (

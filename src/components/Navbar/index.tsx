@@ -18,16 +18,12 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { GlobalSvg } from "../../assets/svg";
 import { useStyles } from "../../utils/useStyles";
+import { pages } from "../../utils/pages";
 import { calcTotalPrice } from "../../utils/calcTotalPrice";
 import "./Navbar.scss";
 
 const Navbar: FC = React.memo(() => {
   const classes = useStyles();
-  const pages: IPages[] = [
-    { name: "Mac", path: "mac" },
-    { name: "iPhone", path: "phone" },
-    { name: "AirPods", path: "pods" },
-  ];
   const product = useSelector((state: RootState) => state.cart.productInCart);
   const totalPrice = calcTotalPrice(product);
 

@@ -49,3 +49,16 @@ export const useStyles = makeStyles((theme?: any) => ({
   },
   pageName: { color: "#fff" },
 }));
+
+export const style = {
+    position: "absolute" as "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "40%",
+    bgcolor: "#fff",
+    border: "2px solid #231f20",
+    borderRadius: 4,
+    boxShadow: 24,
+    p: 4,
+  };

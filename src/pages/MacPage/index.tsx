@@ -1,11 +1,11 @@
 import React from "react";
 import mac from "../../assets/image/mac.webp";
-import { Container, Grid } from "@mui/material";
+import { Container } from "@mui/material";
 import { useStyles } from "../../utils/useStyles";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IProduct } from "../../models/IProduct";
-import CardItem from "../../components/CardItem";
+import ItemComponent from "../../components/ItemComponent";
 
 const MacPage = React.memo(() => {
   const classes = useStyles();
@@ -17,18 +17,7 @@ const MacPage = React.memo(() => {
   return (
     <Container className={classes.pages} fixed>
       <img className={classes.pageImage} src={mac} alt="Mac" />
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
-        {macbook &&
-          macbook.map((mac: IProduct) => (
-            <Grid item xs={2} sm={4} md={4} key={mac.id}>
-              <CardItem product={mac} />
-            </Grid>
-          ))}
-      </Grid>
+      <ItemComponent product={macbook} />
     </Container>
   );
 });
