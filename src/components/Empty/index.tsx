@@ -7,7 +7,7 @@ const Empty = () => {
     <Container fixed>
       <Box className="empty">
         <Typography align="center" mt={5} component="div" variant="h3">
-          The basket is empty
+          Ваша корзина пустая
         </Typography>
         <Box className="empty__svg">
           <GlobalSvg id="empty" />
