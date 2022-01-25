@@ -16,7 +16,7 @@ const AirPodsPage = React.memo(() => {
   return (
     <Container className={classes.pages} fixed>
       <img className={classes.pageImage} src={air} alt="airpods" />
-      <ItemComponent product={airPods} />
+      <ItemComponent products={airPods} />
     </Container>
   );
 });

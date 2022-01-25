@@ -17,7 +17,7 @@ const MacPage = React.memo(() => {
   return (
     <Container className={classes.pages} fixed>
       <img className={classes.pageImage} src={mac} alt="Mac" />
-      <ItemComponent product={macbook} />
+      <ItemComponent products={macbook} />
     </Container>
   );
 });

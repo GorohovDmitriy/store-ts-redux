@@ -17,7 +17,7 @@ const IphonePage = React.memo(() => {
   return (
     <Container className={classes.pages} fixed>
       <img className={classes.pageImage} src={iphone} alt="iPhone" />
-      <ItemComponent product={iPhone} />
+      <ItemComponent products={iPhone} />
     </Container>
   );
 });
