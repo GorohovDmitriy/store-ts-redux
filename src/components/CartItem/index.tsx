@@ -3,7 +3,7 @@ import { IProduct } from "../../models/IProduct";
 import { ButtonBase, Grid, Paper, Typography, CardMedia } from "@mui/material";
 import { removeFromCart } from "../../redux/actions/cartAction";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/actions/productAction";
 import "./CartItem.scss";
 
@@ -13,7 +13,7 @@ interface CartItemProps {
 
 const CartItem: FC<CartItemProps> = ({ product }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useHistory();
 
   const removeProduct = useCallback(() => {
     dispatch(removeFromCart(product.id));
@@ -21,7 +21,7 @@ const CartItem: FC<CartItemProps> = ({ product }) => {
 
   const selectProduct = useCallback(() => {
     dispatch(setCurrentProduct(product));
-    navigate(`/app/${product.id}`);
+    navigate.push(`/app/${product.id}`);
   }, [dispatch, navigate, product]);
 
   return (
