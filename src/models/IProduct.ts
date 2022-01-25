@@ -6,3 +6,7 @@ export interface IProduct {
   category: string;
   description: string;
 }
+export interface IPages {
+    name: string
+    path: string
+}

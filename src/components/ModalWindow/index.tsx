@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import delcOfNumber from "../../utils/delcOfNumber";
+import { style } from "../../utils/useStyles";
 import { Box, Typography, Modal, Grid, Button } from "@mui/material";
 import { IProduct } from "../../models/IProduct";
 
@@ -15,19 +17,6 @@ const ModalWindow: FC<ModalProps> = ({
   products,
   totalPrice,
 }) => {
-  const style = {
-    position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "40%",
-    bgcolor: "#fff",
-    border: "2px solid #231f20",
-    borderRadius: 4,
-    boxShadow: 24,
-    p: 4,
-  };
-
   return (
     <Modal
       open={open}
@@ -45,11 +34,13 @@ const ModalWindow: FC<ModalProps> = ({
                   Оформление заказа
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  {products.length > 1 ? "Товаров" : "Товар"} {products.length}
+                  {delcOfNumber(products.length)} {products.length}
                 </Typography>
               </Grid>
               <Grid item>
-                <Button onClick={handleClose} variant='contained'>Оформить</Button>
+                <Button onClick={handleClose} variant="contained">
+                  Оформить
+                </Button>
               </Grid>
             </Grid>
             <Grid item>
