@@ -48,3 +48,10 @@ export const setCurrentProduct = (payload: IProduct): ProductAction => {
     payload,
   };
 };
+
+export const setSearchProduct = (payload: IProduct[]): ProductAction => {
+  return {
+    type: ProductActions.SET_SEARCH_PRODUCT,
+    payload,
+  };
+};

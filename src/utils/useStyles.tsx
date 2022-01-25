@@ -20,7 +20,13 @@ export const useStyles = makeStyles((theme?: any) => ({
   },
   pageImage: { width: "100%" },
   homeContainer: { marginTop: "2rem", marginBottom: "3rem" },
-  sortBox: { display: "flex" },
+  sortBox: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: "4rem",
+    marginBottom: "2rem",
+  },
   sortGroup: {
     marginBottom: "2rem",
     marginRight: "2rem",
@@ -51,14 +57,14 @@ export const useStyles = makeStyles((theme?: any) => ({
 }));
 
 export const style = {
-    position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "40%",
-    bgcolor: "#fff",
-    border: "2px solid #231f20",
-    borderRadius: 4,
-    boxShadow: 24,
-    p: 4,
-  };
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "40%",
+  bgcolor: "#fff",
+  border: "2px solid #231f20",
+  borderRadius: 4,
+  boxShadow: 24,
+  p: 4,
+};

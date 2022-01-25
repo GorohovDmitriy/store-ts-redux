@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from "react";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 import { useStyles } from "../../utils/useStyles";
 
 import CardItem from "../../components/CardItem";
@@ -19,6 +19,9 @@ import { IProduct } from "../../models/IProduct";
 const HomePage: FC = React.memo(() => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const searchProducts = useSelector(
+    (state: RootState) => state.products.searchProduct
+  );
   const products: IProduct[] = useSelector(
     (state: RootState) => state.products.apple
   );
@@ -40,7 +43,9 @@ const HomePage: FC = React.memo(() => {
   return (
     <Container className={classes.homeContainer} fixed>
       <ImgSlider />
-      <Sorting sortPrice={sortPrice} />
+      <Box>
+        <Sorting sortPrice={sortPrice} />
+      </Box>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
@@ -48,6 +53,13 @@ const HomePage: FC = React.memo(() => {
       >
         {isLoading ? (
           <Loading />
+        ) : searchProducts !== null ? (
+          searchProducts &&
+          searchProducts.map((product: IProduct) => (
+            <Grid item xs={2} sm={4} md={4} key={product.id}>
+              <CardItem product={product} />
+            </Grid>
+          ))
         ) : (
           products.map((product: IProduct) => (
             <Grid item xs={2} sm={4} md={4} key={product.id}>

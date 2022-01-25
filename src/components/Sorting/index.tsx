@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { ButtonGroup, IconButton } from "@mui/material";
-import { Box } from "@mui/system";
+import { ButtonGroup, IconButton, Box } from "@mui/material";
 import SortIcon from "@mui/icons-material/Sort";
 import { useStyles } from "../../utils/useStyles";
+import Search from '../Search'
 
 interface SortingProps {
   sortPrice: () => void;
@@ -14,10 +14,11 @@ const Sorting: FC<SortingProps> = ({ sortPrice }) => {
     <Box className={classes.sortBox}>
       <ButtonGroup className={classes.sortGroup}>
         <IconButton onClick={sortPrice}>
-          <SortIcon  />
+          <SortIcon />
         </IconButton>
         Сортировка по цене
       </ButtonGroup>
+      <Search />
     </Box>
   );
 };
