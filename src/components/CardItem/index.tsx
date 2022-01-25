@@ -18,11 +18,11 @@ import {
 import { IProduct } from "../../models/IProduct";
 import { setCurrentProduct } from "../../redux/actions/productAction";
 
-interface CartItemProps {
+interface CardItemProps {
   product: IProduct;
 }
 
-const CardItem: FC<CartItemProps> = React.memo(({ product }) => {
+const CardItem: FC<CardItemProps> = React.memo(({ product }) => {
   const classes = useStyles();
   const navigate = useNavigate();
   const dispatch = useDispatch();

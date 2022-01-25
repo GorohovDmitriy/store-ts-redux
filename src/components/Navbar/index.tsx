@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { IPages } from "../../models/IProduct";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -22,7 +23,11 @@ import "./Navbar.scss";
 
 const Navbar: FC = React.memo(() => {
   const classes = useStyles();
-  const pages: Array<string> = ["Mac", "iPhone", "AirPods"];
+  const pages: IPages[] = [
+    { name: "Mac", path: "mac" },
+    { name: "iPhone", path: "phone" },
+    { name: "AirPods", path: "pods" },
+  ];
   const product = useSelector((state: RootState) => state.cart.productInCart);
   const totalPrice = calcTotalPrice(product);
 
@@ -50,10 +55,14 @@ const Navbar: FC = React.memo(() => {
                 <ArrowBackIcon color="secondary" />
               </Link>
             </Typography>
-            {pages.map((page) => (
-              <MenuItem key={page}>
+            {pages.map((page: IPages) => (
+              <MenuItem key={page.name}>
                 <Typography variant="caption" textAlign="center">
-                  {page}
+                  <Link to={`/${page.path}`}>
+                    <Typography className={classes.pageName}>
+                      {page.name}
+                    </Typography>
+                  </Link>
                 </Typography>
               </MenuItem>
             ))}
@@ -84,9 +93,13 @@ const Navbar: FC = React.memo(() => {
             <GlobalSvg id="logo" />
           </Typography>
           <Box className="navbar__list-page">
-            {pages.map((page) => (
-              <MenuItem key={page} className={classes.menuItem}>
-                {page}
+            {pages.map((page: IPages) => (
+              <MenuItem key={page.name} className={classes.menuItem}>
+                <Link to={`/${page.path}`}>
+                  <Typography className={classes.pageName}>
+                    {page.name}
+                  </Typography>
+                </Link>
               </MenuItem>
             ))}
           </Box>

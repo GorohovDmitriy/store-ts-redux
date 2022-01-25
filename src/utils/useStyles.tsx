@@ -8,8 +8,9 @@ export const useStyles = makeStyles((theme?: any) => ({
     marginTop: "15rem",
   },
   slider: {
-    marginBottom: '2rem'
+    marginBottom: "2rem",
   },
+  pages: { marginTop: "2rem", marginBottom: "2rem" },
   backColor: { backgroundColor: "black" },
   textAlign: { display: "flex", alignItems: "center", paddingRight: "0.5rem" },
   cartIcon: {
@@ -17,7 +18,8 @@ export const useStyles = makeStyles((theme?: any) => ({
     marginRight: "1rem",
     marginTop: "0.5rem",
   },
-  homeContainer: { marginTop: "2rem" },
+  pageImage: { width: "100%" },
+  homeContainer: { marginTop: "2rem", marginBottom: "3rem" },
   sortBox: { display: "flex" },
   sortGroup: {
     marginBottom: "2rem",
@@ -27,7 +29,11 @@ export const useStyles = makeStyles((theme?: any) => ({
     justifyContent: "center",
     gap: "1rem",
   },
-  cartContainer: { maxWidth: 345, height: "100%", cursor: 'pointer' },
+  cartContainer: {
+    maxWidth: 345,
+    height: "100%",
+    cursor: "pointer",
+  },
   cartAction: {
     display: "flex",
     alignItems: "center",
@@ -35,5 +41,11 @@ export const useStyles = makeStyles((theme?: any) => ({
     ml: 1,
     mr: 1,
   },
-  menuItem: { margin: "2rem", color: "white", display: "block" },
+  menuItem: {
+    margin: "2rem",
+    color: "white",
+    textDecoration: "none",
+    display: "block",
+  },
+  pageName: { color: "#fff" },
 }));
