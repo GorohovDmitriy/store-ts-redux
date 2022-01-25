@@ -1,12 +1,12 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, FC } from "react";
 import { Box, TextField } from "@mui/material";
-import "./Search.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IProduct } from "../../models/IProduct";
 import { setSearchProduct } from "../../redux/actions/productAction";
+import "./Search.scss";
 
-const Search = () => {
+const Search: FC = React.memo(() => {
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.products.apple);
   const [value, setValue] = useState<string>("");
@@ -42,6 +42,6 @@ const Search = () => {
       </form>
     </Box>
   );
-};
+});
 
 export default Search;
