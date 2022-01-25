@@ -62,7 +62,7 @@ const CardItem: FC<CartItemProps> = React.memo(({ product }) => {
           handleClick={handleClick}
           type={isProductInCart ? "secondary" : "primary"}
         >
-          {isProductInCart ? "Remove from cart" : "Add to cart"}
+          {isProductInCart ? "Удалить из корзины" : "В корзину"}
         </ButtonCart>
       </CardActions>
     </Card>

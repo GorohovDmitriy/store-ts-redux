@@ -37,7 +37,12 @@ const CartItem: FC<CartItemProps> = ({ product }) => {
               <Typography variant="body2" color="text.secondary">
                 {product.category}
               </Typography>
-              <Typography gutterBottom variant="caption" color='tesxtSecondary' component="div">
+              <Typography
+                gutterBottom
+                variant="caption"
+                color="tesxtSecondary"
+                component="div"
+              >
                 {product.description}
               </Typography>
             </Grid>
@@ -47,7 +52,7 @@ const CartItem: FC<CartItemProps> = ({ product }) => {
                 className="cart__remove"
                 variant="body2"
               >
-                Remove
+                Удалить
               </Typography>
             </Grid>
           </Grid>
