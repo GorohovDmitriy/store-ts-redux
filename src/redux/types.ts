@@ -7,6 +7,7 @@ export enum ProductActions {
   REMOVE_FROM_CART = "REMOVE_FROM_CART",
   SET_ERROR = "SET_ERROR",
   SET_CURRENT_PRODUTC = "SET_CURRENT_PRODUTC",
+  SET_SEARCH_PRODUCT = "SET_SEARCH_PRODUCT",
 }
 
 export interface ProductState {
@@ -14,10 +15,16 @@ export interface ProductState {
   isLoading: boolean;
   error: string;
   currentProduct: IProduct | null;
+  searchProduct: IProduct[] | null;
 }
 
 export interface CartState {
   productInCart: IProduct[];
+}
+
+interface SetSearchProduct {
+  type: ProductActions.SET_SEARCH_PRODUCT;
+  payload: IProduct[];
 }
 
 interface GetProductAction {
@@ -56,4 +63,5 @@ export type ProductAction =
   | SetLoadingAction
   | SetErrorAction
   | RemoveFromCart
-  | SetCurrentProduct;
+  | SetCurrentProduct
+  | SetSearchProduct;

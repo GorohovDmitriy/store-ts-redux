@@ -5,6 +5,7 @@ const initialState: ProductState = {
   isLoading: false,
   error: "",
   currentProduct: null,
+  searchProduct: null,
 };
 
 export default function productReducer(
@@ -18,6 +19,7 @@ export default function productReducer(
         isLoading: false,
         error: "",
         currentProduct: null,
+        searchProduct: null,
       };
     case ProductActions.SET_LOADING:
       return {
@@ -30,10 +32,15 @@ export default function productReducer(
         error: action.payload,
       };
     case ProductActions.SET_CURRENT_PRODUTC:
-          return {
-              ...state,
-              currentProduct: action.payload
-          }
+      return {
+        ...state,
+        currentProduct: action.payload,
+      };
+    case ProductActions.SET_SEARCH_PRODUCT:
+      return {
+        ...state,
+        searchProduct: action.payload,
+      };
     default:
       return state;
   }
