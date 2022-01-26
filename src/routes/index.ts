@@ -17,9 +17,9 @@ export enum RoutesName {
 
 export const privateRoute: IRoute[] = [
   { path: RoutesName.HOME, component: HomePage, exact: true },
-  { path: RoutesName.PRODUCT_ID, exact: true, component: ProductPage },
-  { path: RoutesName.CART, exact: true, component: CartPage },
-  { path: RoutesName.MACBOOK, component: MacPage, exact: true },
-  { path: RoutesName.IPHONE, component: IphonePage, exact: true },
-  { path: RoutesName.AIRPODS, component: AirPodsPage, exact: true },
+  { path: RoutesName.PRODUCT_ID, component: ProductPage },
+  { path: RoutesName.CART, component: CartPage },
+  { path: RoutesName.MACBOOK, component: MacPage },
+  { path: RoutesName.IPHONE, component: IphonePage },
+  { path: RoutesName.AIRPODS, component: AirPodsPage },
 ];
