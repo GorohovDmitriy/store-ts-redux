@@ -34,8 +34,6 @@ export const useStyles = makeStyles((theme?: any) => ({
     marginBottom: "2rem",
   },
   sortGroup: {
-    marginBottom: "2rem",
-    marginRight: "2rem",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

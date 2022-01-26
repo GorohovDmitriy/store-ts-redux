@@ -1,15 +1,25 @@
-import React, { FC } from "react";
-import { ButtonGroup, IconButton, Box } from "@mui/material";
-import SortIcon from "@mui/icons-material/Sort";
+import React, { FC, useCallback, useState } from "react";
+import { ButtonGroup, IconButton, Box, Button } from "@mui/material";
 import { useStyles } from "../../utils/useStyles";
-import Search from '../Search'
+import { fetchProduct } from "../../redux/actions/productAction";
+import { useDispatch } from "react-redux";
+import SortIcon from "@mui/icons-material/Sort";
+import Search from "../Search";
 
 interface SortingProps {
   sortPrice: () => void;
 }
 
 const Sorting: FC<SortingProps> = ({ sortPrice }) => {
+  const [resetSearch, setResetSearch] = useState(false);
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    setResetSearch(false);
+    dispatch(fetchProduct());
+  };
+
   return (
     <Box className={classes.sortBox}>
       <ButtonGroup className={classes.sortGroup}>
@@ -18,7 +28,8 @@ const Sorting: FC<SortingProps> = ({ sortPrice }) => {
         </IconButton>
         Сортировка по цене
       </ButtonGroup>
-      <Search />
+      {resetSearch && <Button onClick={handleClick}>Вернуться назад</Button>}
+      <Search setResetSearch={setResetSearch} />
     </Box>
   );
 };

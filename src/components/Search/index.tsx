@@ -1,14 +1,18 @@
 import React, { useState, ChangeEvent, FormEvent, FC } from "react";
 import { Box, IconButton, InputAdornment, TextField } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IProduct } from "../../models/IProduct";
 import { setSearchProduct } from "../../redux/actions/productAction";
 import { useStyles } from "../../utils/useStyles";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "./Search.scss";
 
-const Search: FC = React.memo(() => {
+interface SearchProps {
+  setResetSearch: React.Dispatch<React.SetStateAction<any>>;
+}
+
+const Search: FC<SearchProps> = React.memo(({ setResetSearch }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.products.apple);
@@ -18,7 +22,7 @@ const Search: FC = React.memo(() => {
     setValue(e.target.value);
   };
 
-  const resetSearch = () => {
+  const clearInput = () => {
     value !== "" && setValue("");
   };
 
@@ -32,6 +36,7 @@ const Search: FC = React.memo(() => {
     } else {
       dispatch(setSearchProduct(searchItem));
       setValue("");
+      setResetSearch(true);
     }
   };
 
@@ -50,8 +55,8 @@ const Search: FC = React.memo(() => {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton onClick={resetSearch} aria-label="delete">
-                  <CloseIcon />
+                <IconButton onClick={clearInput} aria-label="delete">
+                  <KeyboardBackspaceIcon />
                 </IconButton>
               </InputAdornment>
             ),
