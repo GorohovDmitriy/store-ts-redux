@@ -53,7 +53,7 @@ const Navbar: FC = React.memo(() => {
             </Typography>
             {pages.map((page: IPages) => (
               <MenuItem key={page.name}>
-                <Typography variant="caption" textAlign="center">
+                <Typography variant="caption"  textAlign="center">
                   <Link to={`/${page.path}`}>
                     <Typography className={classes.pageName}>
                       {page.name}
@@ -71,7 +71,6 @@ const Navbar: FC = React.memo(() => {
                 {totalPrice} BYN
               </Typography>
             ) : null}
-
             <Link to="/cart">
               <Fab size="small" color="primary">
                 <Badge color="error" badgeContent={product.length}>

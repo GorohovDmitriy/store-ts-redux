@@ -63,7 +63,7 @@ export const useStyles = makeStyles((theme?: any) => ({
     textDecoration: "none",
     display: "block",
   },
-  pageName: { color: "#fff" },
+  pageName: { color: "#fff", fontSize: '5px' },
 }));
 
 export const style = {
