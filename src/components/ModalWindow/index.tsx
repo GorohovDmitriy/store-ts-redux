@@ -1,11 +1,6 @@
 import React, { FC } from "react";
 import delcOfNumber from "../../utils/delcOfNumber";
-import { style } from "../../utils/useStyles";
 import {
-  Box,
-  Typography,
-  Modal,
-  Grid,
   Button,
   Dialog,
   DialogTitle,
@@ -13,7 +8,6 @@ import {
   DialogActions,
   DialogContentText,
   DialogProps,
-  CardMedia,
 } from "@mui/material";
 import { IProduct } from "../../models/IProduct";
 import CartItem from "../CartItem";
