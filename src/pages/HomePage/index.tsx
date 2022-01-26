@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Container, Grid, Box } from "@mui/material";
 import { useStyles } from "../../utils/useStyles";
 
@@ -19,6 +19,7 @@ import { IProduct } from "../../models/IProduct";
 const HomePage: FC = React.memo(() => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const [sorting, setSorting] = useState(false);
   const searchProducts = useSelector(
     (state: RootState) => state.products.searchProduct
   );
@@ -28,12 +29,22 @@ const HomePage: FC = React.memo(() => {
   const isLoading = useSelector((state: RootState) => state.products.isLoading);
 
   const sortPrice = () => {
-    dispatch(setLoading(true));
-    const sortProduct = products.sort(
-      (a, b) => Number(b.price) - Number(a.price)
-    );
-    dispatch(setProduct(sortProduct));
-    dispatch(setLoading(false));
+    setSorting(!sorting);
+    if (sorting) {
+      dispatch(setLoading(true));
+      const sortProduct = products.sort(
+        (a, b) => Number(b.price) - Number(a.price)
+      );
+      dispatch(setProduct(sortProduct));
+      dispatch(setLoading(false));
+    } else {
+      dispatch(setLoading(true));
+      const sortProduct = products.sort(
+        (a, b) => Number(a.price) - Number(b.price)
+      );
+      dispatch(setProduct(sortProduct));
+      dispatch(setLoading(false));
+    }
   };
 
   useEffect(() => {

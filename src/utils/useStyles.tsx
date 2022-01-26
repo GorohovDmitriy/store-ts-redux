@@ -10,8 +10,8 @@ export const useStyles = makeStyles((theme?: any) => ({
   },
   inputBase: {
     border: "1px solid #231f20",
-    borderRadius: '4px',
-    paddingLeft: '10px',
+    borderRadius: "4px",
+    paddingLeft: "10px",
   },
   slider: {
     marginBottom: "2rem",
@@ -52,6 +52,10 @@ export const useStyles = makeStyles((theme?: any) => ({
     justifyContent: "space-between",
     ml: 1,
     mr: 1,
+  },
+  underline: {
+    paddingLeft: "2rem",
+    paddingRight: "2rem",
   },
   menuItem: {
     margin: "2rem",

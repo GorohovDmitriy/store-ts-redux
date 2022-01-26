@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent, FC } from "react";
-import { Box, InputBase } from "@mui/material";
+import { Box, IconButton, InputAdornment, TextField } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IProduct } from "../../models/IProduct";
@@ -15,6 +16,10 @@ const Search: FC = React.memo(() => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
+  };
+
+  const resetSearch = () => {
+    value !== "" && setValue("");
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -33,12 +38,24 @@ const Search: FC = React.memo(() => {
   return (
     <Box className="search">
       <form onSubmit={handleSubmit} className="search__form">
-        <InputBase
-          value={value}
+        <TextField
+          id="standard-search"
+          label="Поиск"
+          type="search"
+          variant="outlined"
           onChange={handleChange}
-          placeholder="Поиск"
-          className={classes.inputBase}
+          value={value}
           fullWidth
+          className={classes.underline}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={resetSearch} aria-label="delete">
+                  <CloseIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
       </form>
     </Box>

@@ -8,4 +8,13 @@
 .search__input {
   border-bottom: none;
 }
-
+input[type="search"]:not(.browser-default) {
+  border-bottom: none;
+}
+input[type="search"]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: none;
+  outline: none;
+  box-shadow: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
