@@ -13,6 +13,9 @@
     display: flex;
     flex-grow: 1;
   }
+  @media (max-width: 765px) {
+    justify-content: center;
+  }
 }
 
 .navbar__list-logo {
@@ -21,6 +24,10 @@
 
   @media (min-width: 900px) {
     display: none;
+  }
+  @media (max-width: 765px) {
+    display: none;
+    justify-content: center;
   }
 }
 
