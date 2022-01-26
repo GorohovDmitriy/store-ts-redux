@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent, FC } from "react";
-import { Box, InputBase, TextField } from "@mui/material";
+import { Box, InputBase } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IProduct } from "../../models/IProduct";
@@ -38,7 +38,6 @@ const Search: FC = React.memo(() => {
           onChange={handleChange}
           placeholder="Поиск"
           className={classes.inputBase}
-          autoFocus={false}
           fullWidth
         />
       </form>
