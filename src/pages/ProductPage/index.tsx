@@ -69,7 +69,7 @@ const ProductPage = React.memo(() => {
                   handleClick={handleClick}
                   type={isProductInCart ? "secondary" : "primary"}
                 >
-                  {isProductInCart ? "Remove from cart" : "Add to cart"}
+                  {isProductInCart ? "Удалить" : "В корзину"}
                 </ButtonCart>
               </Grid>
             </Grid>

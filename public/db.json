@@ -3,7 +3,7 @@
     {
       "id": 1,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/210915083817996265/210927160105090943.jpg@webp",
-      "name": "iPhone 13 Pro, 128 ГБ, Графитовый, (MLW13)",
+      "name": "iPhone 13 Pro, 128 ГБ, Графитовый",
       "price": 3799,
       "category": "iPhone",
       "description": "Дисплей Super Retina XDR с технологией ProMotion и быстрым, плавным откликом. Грандиозный апгрейд системы камер, открывающий совершенно новые возможности. Исключительная прочность.A15 Bionic — самый быстрый чип для iPhone. И впечатляющее время работы без подзарядки. Всё это Pro."
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/210421075103588110/210421160012445338.jpg@webp",
-      "name": "iPhone 12, 64 ГБ, Фиолетовый, (MJNM3)",
+      "name": "iPhone 12, 64 ГБ, Фиолетовый",
       "price": 2699,
       "category": "iPhone",
       "description": "Дисплей Super Retina XDR с технологией ProMotion и быстрым, плавным откликом. Грандиозный апгрейд системы камер, открывающий совершенно новые возможности. Исключительная прочность.A15 Bionic — самый быстрый чип для iPhone. И впечатляющее время работы без подзарядки. Всё это Pro."
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/201014082220380043/201106080015359090.jpg@webp",
-      "name": "iPhone 12 mini, 64 ГБ, Синий, (MGE13)",
+      "name": "iPhone 12 mini, 64 ГБ, Синий",
       "price": 2299,
       "category": "iPhone",
       "description": "Дисплей Super Retina XDR с технологией ProMotion и быстрым, плавным откликом. Грандиозный апгрейд системы камер, открывающий совершенно новые возможности. Исключительная прочность.A15 Bionic — самый быстрый чип для iPhone. И впечатляющее время работы без подзарядки. Всё это Pro."
@@ -61,7 +61,8 @@
       "imageUrl": "https://cdn0.i-store.by/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/201209061647639678/201209150028401370.jpg@webp",
       "name": "Наушники Apple AirPods Max, «Серый космос»",
       "price": 1940,
-      "category": "AirPods","description": "Представляем абсолютно новые AirPods. Технология прослушивания аудио окружает звук со всеми сторонами. Адаптивный эквалайзер подстраивает музыку индивидуально под вас. Аккумулятор работает ещё дольше без подзарядки. Наушники не боятся пота и воды. Ощущения просто волшебные."
+      "category": "AirPods",
+      "description": "Представляем абсолютно новые AirPods. Технология прослушивания аудио окружает звук со всеми сторонами. Адаптивный эквалайзер подстраивает музыку индивидуально под вас. Аккумулятор работает ещё дольше без подзарядки. Наушники не боятся пота и воды. Ощущения просто волшебные."
     },
     {
       "id": 9,

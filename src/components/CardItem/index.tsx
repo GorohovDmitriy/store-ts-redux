@@ -57,12 +57,14 @@ const CardItem: FC<CardItemProps> = React.memo(({ product }) => {
         </Typography>
       </CardContent>
       <CardActions className={classes.cartAction}>
-        <Typography>{product.price} BYN</Typography>
+        <Typography variant="subtitle1" component="div">
+          {product.price} BYN
+        </Typography>
         <ButtonCart
           handleClick={handleClick}
           type={isProductInCart ? "secondary" : "primary"}
         >
-          {isProductInCart ? "Удалить из корзины" : "В корзину"}
+          {isProductInCart ? "Удалить" : "В корзину"}
         </ButtonCart>
       </CardActions>
     </Card>

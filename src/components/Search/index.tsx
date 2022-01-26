@@ -1,12 +1,14 @@
 import React, { useState, ChangeEvent, FormEvent, FC } from "react";
-import { Box, TextField } from "@mui/material";
+import { Box, InputBase, TextField } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IProduct } from "../../models/IProduct";
 import { setSearchProduct } from "../../redux/actions/productAction";
+import { useStyles } from "../../utils/useStyles";
 import "./Search.scss";
 
 const Search: FC = React.memo(() => {
+  const classes = useStyles();
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.products.apple);
   const [value, setValue] = useState<string>("");
@@ -31,13 +33,13 @@ const Search: FC = React.memo(() => {
   return (
     <Box className="search">
       <form onSubmit={handleSubmit} className="search__form">
-        <TextField
+        <InputBase
           value={value}
-          type="search"
           onChange={handleChange}
+          placeholder="Поиск"
+          className={classes.inputBase}
+          autoFocus={false}
           fullWidth
-          id="demo-helper-text-aligned-no-helper"
-          label="Поиск по названию"
         />
       </form>
     </Box>

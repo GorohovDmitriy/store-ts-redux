@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/styles";
+import { padding } from "@mui/system";
 
 export const useStyles = makeStyles((theme?: any) => ({
   loading: {
@@ -6,6 +7,11 @@ export const useStyles = makeStyles((theme?: any) => ({
     alignItems: "center",
     justifyContent: "center",
     marginTop: "15rem",
+  },
+  inputBase: {
+    border: "1px solid #231f20",
+    borderRadius: '4px',
+    paddingLeft: '10px',
   },
   slider: {
     marginBottom: "2rem",
