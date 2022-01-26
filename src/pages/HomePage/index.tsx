@@ -30,21 +30,13 @@ const HomePage: FC = React.memo(() => {
 
   const sortPrice = () => {
     setSorting(!sorting);
-    if (sorting) {
-      dispatch(setLoading(true));
-      const sortProduct = products.sort(
-        (a, b) => Number(b.price) - Number(a.price)
-      );
-      dispatch(setProduct(sortProduct));
-      dispatch(setLoading(false));
-    } else {
-      dispatch(setLoading(true));
-      const sortProduct = products.sort(
-        (a, b) => Number(a.price) - Number(b.price)
-      );
-      dispatch(setProduct(sortProduct));
-      dispatch(setLoading(false));
-    }
+    const sortFunc = (a: IProduct, b: IProduct) =>
+      sorting
+        ? Number(b.price) - Number(a.price)
+        : Number(a.price) - Number(b.price);
+    dispatch(setLoading(true));
+    dispatch(setProduct(products.sort(sortFunc)));
+    dispatch(setLoading(false));
   };
 
   useEffect(() => {
