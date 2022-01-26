@@ -59,9 +59,11 @@ const HomePage: FC = React.memo(() => {
         ) : searchProducts !== null ? (
           searchProducts &&
           searchProducts.map((product: IProduct) => (
-            <Grid item xs={2} sm={4} md={4} key={product.id}>
-              <CardItem product={product} />
-            </Grid>
+            <>
+              <Grid item xs={2} sm={4} md={4} key={product.id}>
+                <CardItem product={product} />
+              </Grid>
+            </>
           ))
         ) : (
           products.map((product: IProduct) => (
