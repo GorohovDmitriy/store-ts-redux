@@ -53,7 +53,7 @@ const Navbar: FC = React.memo(() => {
             </Typography>
             {pages.map((page: IPages) => (
               <MenuItem key={page.name}>
-                <Typography variant="caption"  textAlign="center">
+                <Typography variant="caption" textAlign="center">
                   <Link to={`/${page.path}`}>
                     <Typography className={classes.pageName}>
                       {page.name}

@@ -60,6 +60,7 @@ const CartItem: FC<CartItemProps> = ({ product }) => {
                 onClick={removeProduct}
                 className="cart__remove"
                 variant="body2"
+                component="span"
               >
                 Удалить
               </Typography>

@@ -39,9 +39,7 @@ const HomePage: FC = React.memo(() => {
     dispatch(setLoading(false));
   };
 
-  useEffect(() => {
-    dispatch(fetchProduct());
-  }, [dispatch]);
+  
 
   return (
     <Container className={classes.homeContainer} fixed>

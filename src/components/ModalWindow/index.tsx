@@ -43,12 +43,12 @@ const ModalWindow: FC<ModalProps> = ({
           {delcOfNumber(products.length)} {products.length} на сумму{" "}
           {totalPrice}
           {products.map((product: IProduct) => (
-            <CartItem product={product} />
+            <CartItem key={product.id} product={product} />
           ))}
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button variant="contained" onClick={handleClose} autoFocus>
+        <Button variant="contained" onClick={handleClose}>
           Оформить
         </Button>
       </DialogActions>
