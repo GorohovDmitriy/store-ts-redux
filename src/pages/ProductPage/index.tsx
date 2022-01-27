@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   ButtonBase,
   CardMedia,
@@ -6,6 +6,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import { useParams } from "react-router-dom";
 import ButtonCart from "../../components/ButtonCart";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -16,38 +17,49 @@ import {
   setProductInCart,
 } from "../../redux/actions/cartAction";
 import "./ProductPage.scss";
+import { setCurrentProduct } from "../../redux/actions/productAction";
 
 const ProductPage = React.memo(() => {
+  const { id } = useParams();
   const classes = useStyles();
   const dispatch = useDispatch();
-  const productCurrent = useSelector(
-    (state: RootState) => state.products.currentProduct
+  const products: IProduct[] = useSelector(
+    (state: RootState) => state.products.apple
   );
-  const products = useSelector((state: RootState) => state.cart.productInCart);
-  const isProductInCart = products.some(
-    (item: IProduct) => item.id === productCurrent?.id
+  const [productId] = products.filter(
+    (product: IProduct) => product.id === Number(id)
+  );
+  const productsInCart = useSelector(
+    (state: RootState) => state.cart.productInCart
+  );
+  const isProductInCart = productsInCart.some(
+    (item: IProduct) => item.id === Number(id)
   );
 
+  useEffect(() => {
+    dispatch(setCurrentProduct(productId));
+  }, []);
+
   const handleClick = () => {
-    if (productCurrent) {
+    if (productId) {
       dispatch(
         isProductInCart
-          ? removeFromCart(productCurrent.id)
-          : setProductInCart(productCurrent)
+          ? removeFromCart(productId.id)
+          : setProductInCart(productId)
       );
     }
   };
 
   return (
     <Container className={classes.homeContainer} fixed>
-      {productCurrent && (
+      {productId && (
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className="product-page">
               <CardMedia
                 component="img"
                 alt="green iguana"
-                image={productCurrent.imageUrl}
+                image={productId.imageUrl}
               />
             </ButtonBase>
           </Grid>
@@ -55,13 +67,13 @@ const ProductPage = React.memo(() => {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1" component="div">
-                  {productCurrent.name}
+                  {productId.name}
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  {productCurrent.category}
+                  {productId.category}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {productCurrent.description}
+                  {productId.description}
                 </Typography>
               </Grid>
               <Grid item>
@@ -75,7 +87,7 @@ const ProductPage = React.memo(() => {
             </Grid>
             <Grid item>
               <Typography variant="subtitle1" component="div">
-                {productCurrent.price} BYN
+                {productId.price} BYN
               </Typography>
             </Grid>
           </Grid>
