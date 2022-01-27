@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/styles";
-import { padding } from "@mui/system";
 
 export const useStyles = makeStyles((theme?: any) => ({
   loading: {
@@ -61,7 +60,7 @@ export const useStyles = makeStyles((theme?: any) => ({
     textDecoration: "none",
     display: "block",
   },
-  pageName: { color: "#fff", fontSize: '5px' },
+  pageName: { color: "#fff", fontSize: "5px" },
 }));
 
 export const style = {

@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from "react";
+import React, { FC, useState } from "react";
 import { ButtonGroup, IconButton, Box, Button } from "@mui/material";
 import { useStyles } from "../../utils/useStyles";
 import { fetchProduct } from "../../redux/actions/productAction";

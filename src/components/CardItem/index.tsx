@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import ButtonCart from "../ButtonCart";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useStyles } from "../../utils/useStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -24,7 +24,7 @@ interface CardItemProps {
 
 const CardItem: FC<CardItemProps> = React.memo(({ product }) => {
   const classes = useStyles();
-  const navigate = useHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.cart.productInCart);
 
@@ -40,7 +40,7 @@ const CardItem: FC<CardItemProps> = React.memo(({ product }) => {
 
   const selectProduct = useCallback(() => {
     dispatch(setCurrentProduct(product));
-    navigate.push(`/app/${product.id}`);
+    navigate(`/app/${product.id}`);
   }, [dispatch, product, navigate]);
 
   return (
