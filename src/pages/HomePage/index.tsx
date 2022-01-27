@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import { Container, Grid, Box } from "@mui/material";
 import { useStyles } from "../../utils/useStyles";
 
@@ -7,11 +7,7 @@ import Sorting from "../../components/Sorting";
 import Loading from "../../components/Loading";
 import ImgSlider from "../../components/ImgSlider";
 
-import {
-  fetchProduct,
-  setLoading,
-  setProduct,
-} from "../../redux/actions/productAction";
+import { setLoading, setProduct } from "../../redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IProduct } from "../../models/IProduct";
@@ -38,8 +34,6 @@ const HomePage: FC = React.memo(() => {
     dispatch(setProduct(products.sort(sortFunc)));
     dispatch(setLoading(false));
   };
-
-  
 
   return (
     <Container className={classes.homeContainer} fixed>

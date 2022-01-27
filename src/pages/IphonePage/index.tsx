@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import iphone from "../../assets/image/iphone.webp";
 import { Container } from "@mui/material";
 import { useStyles } from "../../utils/useStyles";
